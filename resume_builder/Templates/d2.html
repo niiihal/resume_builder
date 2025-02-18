@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor's Resume</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+        }
+
+        .left-column {
+            width: 30%;
+            background-color: #0066cc;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .left-column img {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+            border: 3px solid #fff;
+        }
+
+        .left-column h2,
+        .left-column p {
+            margin: 10px 0;
+        }
+
+        .right-column {
+            width: 70%;
+            padding: 20px;
+        }
+
+        .right-column h1 {
+            margin-top: 0;
+            font-size: 2.5rem;
+            color: #0066cc;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section h2 {
+            border-bottom: 2px solid #0066cc;
+            padding-bottom: 5px;
+            color: #0066cc;
+            font-size: 1.5rem;
+        }
+
+        .section p {
+            margin: 5px 0;
+        }
+
+        .editable {
+            border: 1px dashed #0066cc;
+            padding: 5px;
+        }
+
+        .print-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .print-button:hover {
+            background-color: #218838;
+        }
+
+        @media print {
+            .print-button {
+                display: none;
+            }
+        }
+
+        /* Added icon styles */
+        .icon {
+            margin-right: 10px;
+            color: #0066cc;
+        }
+
+        .contact p {
+            display: flex;
+            align-items: center;
+        }
+
+        .contact p img {
+            width: 20px;
+            height: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left-column">
+            <img src="wp.jpeg" alt="Doctor's Profile Picture">
+            <h2>Contact</h2>
+            <div class="contact">
+                <p><img src="phone-icon.png" alt="Phone Icon" class="icon"> <span class="editable"
+                        contenteditable="true">[Your Phone Number]</span></p>
+                <p><img src="email-icon.png" alt="Email Icon" class="icon"> <span class="editable"
+                        contenteditable="true">[Your Email Address]</span></p>
+                <p><img src="linkedin-icon.png" alt="LinkedIn Icon" class="icon"> <span class="editable"
+                        contenteditable="true">[Your LinkedIn Profile]</span></p>
+            </div>
+        </div>
+        <div class="right-column">
+            <h1 class="editable" contenteditable="true">[Your Name], MD</h1>
+            <p class="editable" contenteditable="true">[Your Specialty]</p>
+
+            <!-- Professional Summary -->
+            <div class="section">
+                <h2>Professional Summary</h2>
+                <p class="editable" contenteditable="true">[Brief summary of your medical background and experience,
+                    including notable accomplishments, skills, and areas of expertise]</p>
+            </div>
+
+            <!-- Clinical Experience -->
+            <div class="section">
+                <h2>Clinical Experience</h2>
+                <p class="editable" contenteditable="true"><strong>[Dates of Employment]</strong> [Job Title],
+                    [Hospital/Clinic Name]</p>
+                <p class="editable" contenteditable="true">[Responsibilities or Achievements]</p>
+                <p class="editable" contenteditable="true"><strong>[Dates of Employment]</strong> [Job Title],
+                    [Hospital/Clinic Name]</p>
+                <p class="editable" contenteditable="true">[Responsibilities or Achievements]</p>
+            </div>
+
+            <!-- Education -->
+            <div class="section">
+                <h2>Education</h2>
+                <p class="editable" contenteditable="true">[Degree], [Major]</p>
+                <p class="editable" contenteditable="true">[University Name], [Year of Graduation]</p>
+            </div>
+
+            <!-- Certifications & Licenses -->
+            <div class="section">
+                <h2>Certifications & Licenses</h2>
+                <p class="editable" contenteditable="true">[Certification Name], [Issuing Organization], [Year]</p>
+                <p class="editable" contenteditable="true">[License], [State/Region], [Year]</p>
+            </div>
+
+            <!-- Skills -->
+            <div class="section">
+                <h2>Skills</h2>
+                <p class="editable" contenteditable="true">[Medical Skill 1]</p>
+                <p class="editable" contenteditable="true">[Medical Skill 2]</p>
+                <p class="editable" contenteditable="true">[Medical Skill 3]</p>
+            </div>
+
+            <!-- Continuing Education & Training -->
+            <div class="section">
+                <h2>Continuing Education & Training</h2>
+                <p class="editable" contenteditable="true">[Course Name], [Institution], [Year]</p>
+                <p class="editable" contenteditable="true">[Conference Name], [Year]</p>
+            </div>
+
+            <!-- Publications -->
+            <div class="section">
+                <h2>Publications</h2>
+                <p class="editable" contenteditable="true">[Title of Publication], [Journal Name], [Year]</p>
+                <p class="editable" contenteditable="true">[Title of Publication], [Journal Name], [Year]</p>
+            </div>
+
+            <!-- References -->
+            <div class="section">
+                <h2>References</h2>
+                <p class="editable" contenteditable="true">Available upon request.</p>
+            </div>
+        </div>
+    </div>
+    <button class="print-button" onclick="window.print()">Print Resume</button>
+    <script>
+        document.querySelectorAll('.editable').forEach(element => {
+            element.addEventListener('click', function () {
+                this.focus();
+            });
+        });
+    </script>
+</body>
+
+</html>

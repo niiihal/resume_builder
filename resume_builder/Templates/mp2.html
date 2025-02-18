@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editable Resume</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .left-column {
+            width: 30%;
+            background-color: #34495e;
+            color: #ecf0f1;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .left-column img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid #ecf0f1;
+            margin-bottom: 20px;
+        }
+
+        .left-column h2 {
+            margin: 10px 0;
+            font-size: 1.5em;
+            color: #3498db;
+        }
+
+        .left-column p {
+            margin: 5px 0;
+            font-size: 0.9em;
+        }
+
+        .right-column {
+            width: 70%;
+            padding: 20px;
+        }
+
+        .right-column h1 {
+            margin-top: 0;
+            font-size: 2.5em;
+            color: #2c3e50;
+        }
+
+        .right-column p {
+            margin: 5px 0;
+            font-size: 1em;
+            color: #34495e;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section h2 {
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+            font-size: 1.8em;
+            color: #2c3e50;
+        }
+
+        .section p {
+            margin: 5px 0;
+            font-size: 1em;
+            color: #34495e;
+        }
+
+        .editable {
+            border: 1px dashed #3498db;
+            padding: 5px;
+            margin: 5px 0;
+            background-color: #f9f9f9;
+            color: #2c3e50;
+            cursor: text;
+        }
+
+        .editable:focus {
+            border: 1px solid #3498db;
+            background-color: #ecf0f1;
+            outline: none;
+        }
+
+        .print-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .print-button:hover {
+            background-color: #2980b9;
+        }
+
+        @media print {
+            body {
+                background-color: #fff;
+            }
+
+            .container {
+                box-shadow: none;
+                margin: 0;
+                width: 100%;
+            }
+
+            .print-button {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left-column">
+            <img src="wp.jpeg" alt="Profile Picture">
+            <h2>Contact</h2>
+            <p class="editable" contenteditable="true">[Your Address]</p>
+            <p class="editable" contenteditable="true">[City, State, ZIP]</p>
+            <p class="editable" contenteditable="true">Phone: [Your Phone Number]</p>
+            <p class="editable" contenteditable="true">Email: [Your Email Address]</p>
+            <p class="editable" contenteditable="true">LinkedIn: [Your LinkedIn Profile]</p>
+        </div>
+        <div class="right-column">
+            <h1 class="editable" contenteditable="true">[Your Name]</h1>
+            <p class="editable" contenteditable="true">[Your Profession]</p>
+            <div class="section">
+                <h2>Profile</h2>
+                <p class="editable" contenteditable="true">[Brief summary of your professional background]</p>
+            </div>
+            <div class="section">
+                <h2>Career</h2>
+                <p class="editable" contenteditable="true"><strong>[Dates of Employment]</strong> [Job Title],
+                    [School/Organization Name]</p>
+                <p class="editable" contenteditable="true">[Responsibilities or Achievements]</p>
+                <p class="editable" contenteditable="true"><strong>[Dates of Employment]</strong> [Job Title],
+                    [School/Organization Name]</p>
+                <p class="editable" contenteditable="true">[Responsibilities or Achievements]</p>
+            </div>
+            <div class="section">
+                <h2>Skills</h2>
+                <p class="editable" contenteditable="true">[Skill 1]</p>
+                <p class="editable" contenteditable="true">[Skill 2]</p>
+                <p class="editable" contenteditable="true">[Skill 3]</p>
+            </div>
+            <div class="section">
+                <h2>Academic</h2>
+                <p class="editable" contenteditable="true">[Degree], [Major]</p>
+                <p class="editable" contenteditable="true">[University Name], [Year of Graduation]</p>
+            </div>
+            <div class="section">
+                <h2>References</h2>
+                <p class="editable" contenteditable="true">Available upon request.</p>
+            </div>
+        </div>
+    </div>
+
+    <button class="print-button" onclick="window.print()">Print Resume</button>
+    <script>
+        document.querySelectorAll('.editable').forEach(element => {
+            element.addEventListener('click', function () {
+                this.focus();
+            });
+        });
+    </script>
+</body>
+
+</html>

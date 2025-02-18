@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Builder | ResumePro</title>
+    <link rel="stylesheet" href="cv-builder.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="cv-builder-container">
+        <h2>Create Your CV</h2>
+        <p>Select your job sector and fill in the details</p>
+
+        <!-- Job Category Selection -->
+        <div class="input-group">
+            <label for="job-category">Choose a Job Sector</label>
+            <select id="job-category">
+                <option value="">-- Select Category --</option>
+                <option value="teacher">Teacher</option>
+                <option value="programmer">Programmer</option>
+                <option value="officer">Officer</option>
+                <option value="govt">Government Jobs</option>
+                <option value="marketing">Marketing</option>
+                <option value="designing">Designing</option>
+                <option value="accounting">Accounting</option>
+                <option value="custom">Others</option>
+            </select>
+        </div>
+
+        <!-- Dynamic CV Form -->
+        <form id="cv-form">
+            <div id="cv-fields">
+                <!-- Fields will be dynamically generated here -->
+            </div>
+            <button type="submit" class="btn-generate">Generate CV</button>
+        </form>
+    </div>
+
+    <script src="cv-builder.js"></script>
+</body>
+
+</html>
